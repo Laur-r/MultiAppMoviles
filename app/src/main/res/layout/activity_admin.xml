@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#FFF0F5">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Panel Administrador"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#4A2040"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/btnCrearUser"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#C97BAE"
+        android:onClick="crearUsuario"
+        android:text="Crear Usuario"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="16dp" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#B5589A"
+        android:onClick="administrarUsuarios"
+        android:text="Administrar Usuarios"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="16dp" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        android:onClick="regresar"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4A2040"
+        style="@style/Widget.MaterialComponents.Button"
+        app:cornerRadius="16dp"/>
+
+</LinearLayout>

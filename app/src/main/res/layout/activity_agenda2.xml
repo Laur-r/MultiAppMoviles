@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF0F5">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Intereses"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#4A2040"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"/>
+
+            <CheckBox
+                android:id="@+id/cbDeporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deporte"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbMusica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Música"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+            <CheckBox
+                android:id="@+id/cbCine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cine"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbArte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Arte"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbLectura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lectura"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbViajes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Viajes"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbCocina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cocina"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbTecnologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tecnología"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbModa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Moda"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <CheckBox
+                android:id="@+id/cbFotografia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fotografía"
+                android:textColor="#4A2040"
+                android:buttonTint="#C97BAE"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Siguiente: Preferencias"
+                android:onClick="preferencias"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#C97BAE"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                app:cornerRadius="16dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Regresar"
+                android:onClick="regresar"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4A2040"
+                android:layout_marginBottom="12dp"
+                app:cornerRadius="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
