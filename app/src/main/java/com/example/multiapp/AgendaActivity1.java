@@ -1,5 +1,6 @@
 package com.example.multiapp;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class AgendaActivity1 extends AppCompatActivity {
 
@@ -23,8 +25,8 @@ public class AgendaActivity1 extends AppCompatActivity {
     RadioButton rbFemenino, rbMasculino;
 
     static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
-
     static Usuario usuarioTemp = new Usuario();
+    static int indexEdicion = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,22 +39,52 @@ public class AgendaActivity1 extends AppCompatActivity {
             return insets;
         });
 
-        edtNombre = findViewById(R.id.edtNombre);
-        edtApellido = findViewById(R.id.edtApellido);
-        edtCedula = findViewById(R.id.edtCedula);
-        edtTelefono = findViewById(R.id.edtTelefono);
-        edtCorreo = findViewById(R.id.edtCorreo);
-        edtDireccion = findViewById(R.id.edtDireccion);
+        listaUsuarios = UsuarioStorage.cargar(this);
+
+        edtNombre          = findViewById(R.id.edtNombre);
+        edtApellido        = findViewById(R.id.edtApellido);
+        edtCedula          = findViewById(R.id.edtCedula);
+        edtTelefono        = findViewById(R.id.edtTelefono);
+        edtCorreo          = findViewById(R.id.edtCorreo);
+        edtDireccion       = findViewById(R.id.edtDireccion);
         edtFechaNacimiento = findViewById(R.id.edtFechaNacimiento);
-        rgSexo = findViewById(R.id.rgSexo);
-        rbFemenino = findViewById(R.id.rbFemenino);
-        rbMasculino = findViewById(R.id.rbMasculino);
+        rgSexo             = findViewById(R.id.rgSexo);
+        rbFemenino         = findViewById(R.id.rbFemenino);
+        rbMasculino        = findViewById(R.id.rbMasculino);
+
+
+        edtFechaNacimiento.setOnClickListener(v -> abrirDatePicker());
+    }
+
+    private void abrirDatePicker() {
+        Calendar cal = Calendar.getInstance();
+
+        String fechaActual = edtFechaNacimiento.getText().toString();
+        if (!fechaActual.isEmpty()) {
+            try {
+                String[] partes = fechaActual.split("/");
+                cal.set(Integer.parseInt(partes[2]),
+                        Integer.parseInt(partes[1]) - 1,
+                        Integer.parseInt(partes[0]));
+            } catch (Exception ignored) {}
+        }
+
+        new DatePickerDialog(
+                this,
+                (datePicker, year, month, day) -> {
+                    String fecha = String.format("%02d/%02d/%04d", day, month + 1, year);
+                    edtFechaNacimiento.setText(fecha);
+                },
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)
+        ).show();
     }
 
     public void intereses(View v) {
-        String nombre = edtNombre.getText().toString().trim();
+        String nombre   = edtNombre.getText().toString().trim();
         String apellido = edtApellido.getText().toString().trim();
-        String cedula = edtCedula.getText().toString().trim();
+        String cedula   = edtCedula.getText().toString().trim();
 
         if (nombre.isEmpty() || apellido.isEmpty() || cedula.isEmpty()) {
             Toast.makeText(this, "Llena nombre, apellido y cédula antes de continuar",
@@ -67,6 +99,8 @@ public class AgendaActivity1 extends AppCompatActivity {
             Toast.makeText(this, "Selecciona un sexo", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        indexEdicion = -1;
 
         usuarioTemp = new Usuario();
         usuarioTemp.setNombre(nombre);

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF0F5">
+    android:background="#FFF0F5"
+    android:orientation="vertical">
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,95 +23,159 @@
                 android:text="Preferencias"
                 android:textAlignment="center"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:textColor="#4A2040"
                 android:paddingTop="12dp"
-                android:paddingBottom="12dp"/>
+                android:paddingBottom="4dp"/>
 
-            <CheckBox
-                android:id="@+id/cbPlaya"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Playa"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:text="¿Qué actividades disfrutas en tu tiempo libre?"
+                android:textAlignment="center"
+                android:textSize="13sp"
+                android:textColor="#C97BAE"
+                android:paddingBottom="16dp"/>
 
-            <CheckBox
-                android:id="@+id/cbMontana"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Montaña"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <CheckBox
-                android:id="@+id/cbCiudad"
+                <CheckBox
+                    android:id="@+id/cbCinePref"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ir al cine"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+
+                <CheckBox
+                    android:id="@+id/cbConciertos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Conciertos"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ciudad"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <CheckBox
-                android:id="@+id/cbCampo"
+                <CheckBox
+                    android:id="@+id/cbRestaurantes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Restaurantes"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+
+                <CheckBox
+                    android:id="@+id/cbTeatro"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Teatro"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Campo"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <CheckBox
-                android:id="@+id/cbNoche"
+                <CheckBox
+                    android:id="@+id/cbNaturaleza"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Naturaleza"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+
+                <CheckBox
+                    android:id="@+id/cbVideojuegos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Videojuegos"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Noche"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <CheckBox
-                android:id="@+id/cbDia"
+                <CheckBox
+                    android:id="@+id/cbCompras"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Compras"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+
+                <CheckBox
+                    android:id="@+id/cbFestivales"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Festivales"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Día"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-            <CheckBox
-                android:id="@+id/cbSolo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Solo"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                <CheckBox
+                    android:id="@+id/cbMuseos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Museos"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
 
-            <CheckBox
-                android:id="@+id/cbGrupo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Grupo"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
-
-            <CheckBox
-                android:id="@+id/cbInterior"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Interior"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
-
-            <CheckBox
-                android:id="@+id/cbExterior"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Exterior"
-                android:textColor="#4A2040"
-                android:buttonTint="#C97BAE"/>
+                <CheckBox
+                    android:id="@+id/cbDeportesPref"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Gym / Sport"
+                    android:textColor="#4A2040"
+                    android:textSize="14sp"
+                    android:buttonTint="#C97BAE"/>
+            </LinearLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="6dp"
                 android:backgroundTint="#B5589A"
                 android:onClick="guardar"
@@ -134,4 +195,4 @@
 
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

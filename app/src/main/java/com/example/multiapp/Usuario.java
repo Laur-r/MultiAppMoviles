@@ -3,200 +3,178 @@ package com.example.multiapp;
 import java.io.Serializable;
 
 public class Usuario implements Serializable {
-    private String nombre, apellido, cedula, sexo, telefono, correo, direccion, fechaNacimiento;
 
-    private boolean intDeporte, intMusica, intCine, intArte, intLectura, intViajes, intCocina, intTecnologia, intModa, intFotografia;
+    // Datos personales
+    private String nombre;
+    private String apellido;
+    private String cedula;
+    private String sexo;
+    private String direccion;
+    private String telefono;
+    private String correo;
+    private String fechaNacimiento;
 
-    private boolean prefPlaya, prefMontana, prefCiudad, prefCampo, prefNoche, prefDia, prefSolo, prefGrupo, prefInterior, prefExterior;
+    // Intereses
+    private boolean intDeporte;
+    private boolean intMusica;
+    private boolean intCine;
+    private boolean intArte;
+    private boolean intLectura;
+    private boolean intViajes;
+    private boolean intCocina;
+    private boolean intTecnologia;
+    private boolean intModa;
+    private boolean intFotografia;
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
+    // Preferencias
+    private boolean prefCine;
+    private boolean prefConciertos;
+    private boolean prefRestaurantes;
+    private boolean prefTeatro;
+    private boolean prefNaturaleza;
+    private boolean prefVideojuegos;
+    private boolean prefCompras;
+    private boolean prefFestivales;
+    private boolean prefMuseos;
+    private boolean prefDeportes;
+
+    // Constructor vacío
+    public Usuario() {}
+
+    // Constructor con datos personales
+    public Usuario(String nombre, String apellido, String cedula,String telefono,
+                   String correo, String direccion, String fechaNacimiento, String sexo) {
         this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-    public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-    public void setCedula(String cedula) {
         this.cedula = cedula;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-    public void setSexo(String sexo) {
         this.sexo = sexo;
-    }
-    public String getTelefono() {
-        return telefono;
-    }
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    public String getCorreo() {
-        return correo;
-    }
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-    public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-    public void setFechaNacimiento(String fechaNacimiento) {
+        this.telefono = telefono;
+        this.correo = correo;
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public boolean isIntDeporte() {
-        return intDeporte;
-    }
-    public void setIntDeporte(boolean v) {
-        this.intDeporte = v;
+    // ─── Getters y Setters: Datos personales ────────────────────────────────
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getApellido() { return apellido; }
+    public void setApellido(String apellido) { this.apellido = apellido; }
+
+    public String getCedula() { return cedula; }
+    public void setCedula(String cedula) { this.cedula = cedula; }
+
+    public String getSexo() { return sexo; }
+    public void setSexo(String sexo) { this.sexo = sexo; }
+
+    public String getDireccion() { return direccion; }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
+
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
+
+    public String getFechaNacimiento() { return fechaNacimiento; }
+    public void setFechaNacimiento(String fechaNacimiento) { this.fechaNacimiento = fechaNacimiento; }
+
+    // ─── Getters y Setters: Intereses ───────────────────────────────────────
+
+    public boolean isIntDeporte() { return intDeporte; }
+    public void setIntDeporte(boolean intDeporte) { this.intDeporte = intDeporte; }
+
+    public boolean isIntMusica() { return intMusica; }
+    public void setIntMusica(boolean intMusica) { this.intMusica = intMusica; }
+
+    public boolean isIntCine() { return intCine; }
+    public void setIntCine(boolean intCine) { this.intCine = intCine; }
+
+    public boolean isIntArte() { return intArte; }
+    public void setIntArte(boolean intArte) { this.intArte = intArte; }
+
+    public boolean isIntLectura() { return intLectura; }
+    public void setIntLectura(boolean intLectura) { this.intLectura = intLectura; }
+
+    public boolean isIntViajes() { return intViajes; }
+    public void setIntViajes(boolean intViajes) { this.intViajes = intViajes; }
+
+    public boolean isIntCocina() { return intCocina; }
+    public void setIntCocina(boolean intCocina) { this.intCocina = intCocina; }
+
+    public boolean isIntTecnologia() { return intTecnologia; }
+    public void setIntTecnologia(boolean intTecnologia) { this.intTecnologia = intTecnologia; }
+
+    public boolean isIntModa() { return intModa; }
+    public void setIntModa(boolean intModa) { this.intModa = intModa; }
+
+    public boolean isIntFotografia() { return intFotografia; }
+    public void setIntFotografia(boolean intFotografia) { this.intFotografia = intFotografia; }
+
+    // ─── Getters y Setters: Preferencias────────────────────────────
+
+    public boolean isPrefCine() { return prefCine; }
+    public void setPrefCine(boolean prefCine) { this.prefCine = prefCine; }
+
+    public boolean isPrefConciertos() { return prefConciertos; }
+    public void setPrefConciertos(boolean prefConciertos) { this.prefConciertos = prefConciertos; }
+
+    public boolean isPrefRestaurantes() { return prefRestaurantes; }
+    public void setPrefRestaurantes(boolean prefRestaurantes) { this.prefRestaurantes = prefRestaurantes; }
+
+    public boolean isPrefTeatro() { return prefTeatro; }
+    public void setPrefTeatro(boolean prefTeatro) { this.prefTeatro = prefTeatro; }
+
+    public boolean isPrefNaturaleza() { return prefNaturaleza; }
+    public void setPrefNaturaleza(boolean prefNaturaleza) { this.prefNaturaleza = prefNaturaleza; }
+
+    public boolean isPrefVideojuegos() { return prefVideojuegos; }
+    public void setPrefVideojuegos(boolean prefVideojuegos) { this.prefVideojuegos = prefVideojuegos; }
+
+    public boolean isPrefCompras() { return prefCompras; }
+    public void setPrefCompras(boolean prefCompras) { this.prefCompras = prefCompras; }
+
+    public boolean isPrefFestivales() { return prefFestivales; }
+    public void setPrefFestivales(boolean prefFestivales) { this.prefFestivales = prefFestivales; }
+
+    public boolean isPrefMuseos() { return prefMuseos; }
+    public void setPrefMuseos(boolean prefMuseos) { this.prefMuseos = prefMuseos; }
+
+    public boolean isPrefDeportes() { return prefDeportes; }
+    public void setPrefDeportes(boolean prefDeportes) { this.prefDeportes = prefDeportes; }
+
+    // ─── Helpers para mostrar en pantalla ───────────────────────────────────
+
+    public String getInteresesTexto() {
+        StringBuilder sb = new StringBuilder();
+        if (intDeporte)    sb.append("Deporte, ");
+        if (intMusica)     sb.append("Música, ");
+        if (intCine)       sb.append("Cine, ");
+        if (intArte)       sb.append("Arte, ");
+        if (intLectura)    sb.append("Lectura, ");
+        if (intViajes)     sb.append("Viajes, ");
+        if (intCocina)     sb.append("Cocina, ");
+        if (intTecnologia) sb.append("Tecnología, ");
+        if (intModa)       sb.append("Moda, ");
+        if (intFotografia) sb.append("Fotografía, ");
+        if (sb.length() > 2) sb.setLength(sb.length() - 2);
+        return sb.length() > 0 ? sb.toString() : "Ninguno";
     }
 
-    public boolean isIntMusica() {
-        return intMusica;
-    }
-    public void setIntMusica(boolean v) {
-        this.intMusica = v;
-    }
-    public boolean isIntCine() {
-        return intCine;
-    }
-    public void setIntCine(boolean v) {
-        this.intCine = v;
-    }
-
-    public boolean isIntArte() {
-        return intArte;
-    }
-    public void setIntArte(boolean v) {
-        this.intArte = v;
-    }
-    public boolean isIntLectura() {
-        return intLectura;
-    }
-    public void setIntLectura(boolean v) {
-        this.intLectura = v;
-    }
-
-    public boolean isIntViajes() {
-        return intViajes;
-    }
-    public void setIntViajes(boolean v) {
-        this.intViajes = v;
-    }
-
-    public boolean isIntCocina() {
-        return intCocina;
-    }
-    public void setIntCocina(boolean v) {
-        this.intCocina = v;
-    }
-
-    public boolean isIntTecnologia() {
-        return intTecnologia;
-    }
-    public void setIntTecnologia(boolean v) {
-        this.intTecnologia = v;
-    }
-
-    public boolean isIntModa() {
-        return intModa;
-    }
-    public void setIntModa(boolean v) {
-        this.intModa = v;
-    }
-
-    public boolean isIntFotografia() {
-        return intFotografia;
-    }
-    public void setIntFotografia(boolean v) {
-        this.intFotografia = v;
-    }
-    public boolean isPrefPlaya() {
-        return prefPlaya;
-    }
-    public void setPrefPlaya(boolean v) {
-        this.prefPlaya = v;
-    }
-
-    public boolean isPrefMontana() {
-        return prefMontana;
-    }
-    public void setPrefMontana(boolean v) {
-        this.prefMontana = v;
-    }
-
-    public boolean isPrefCiudad() {
-        return prefCiudad;
-    }
-    public void setPrefCiudad(boolean v) {
-        this.prefCiudad = v;
-    }
-
-    public boolean isPrefCampo() {
-        return prefCampo;
-    }
-    public void setPrefCampo(boolean v) {
-        this.prefCampo = v;
-    }
-
-    public boolean isPrefNoche() {
-        return prefNoche;
-    }
-    public void setPrefNoche(boolean v) {
-        this.prefNoche = v;
-    }
-
-    public boolean isPrefDia() {
-        return prefDia;
-    }
-    public void setPrefDia(boolean v) {
-        this.prefDia = v;
-    }
-
-    public boolean isPrefSolo() {
-        return prefSolo;
-    }
-    public void setPrefSolo(boolean v) {
-        this.prefSolo = v;
-    }
-
-    public boolean isPrefGrupo() {
-        return prefGrupo;
-    }
-    public void setPrefGrupo(boolean v) {
-        this.prefGrupo = v;
-    }
-
-    public boolean isPrefInterior() {
-        return prefInterior;
-    }
-    public void setPrefInterior(boolean v) {
-        this.prefInterior = v;
-    }
-
-    public boolean isPrefExterior() {
-        return prefExterior;
-    }
-    public void setPrefExterior(boolean v) {
-        this.prefExterior = v;
+    public String getPreferenciasTexto() {
+        StringBuilder sb = new StringBuilder();
+        if (prefCine)         sb.append("Cine, ");
+        if (prefConciertos)   sb.append("Conciertos, ");
+        if (prefRestaurantes) sb.append("Restaurantes, ");
+        if (prefTeatro)       sb.append("Teatro, ");
+        if (prefNaturaleza)   sb.append("Naturaleza, ");
+        if (prefVideojuegos)  sb.append("Videojuegos, ");
+        if (prefCompras)      sb.append("Compras, ");
+        if (prefFestivales)   sb.append("Festivales, ");
+        if (prefMuseos)       sb.append("Museos, ");
+        if (prefDeportes)     sb.append("Gym/Sport, ");
+        if (sb.length() > 2) sb.setLength(sb.length() - 2);
+        return sb.length() > 0 ? sb.toString() : "Ninguna";
     }
 }
